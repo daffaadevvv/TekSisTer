@@ -1,2 +1,2 @@
 # StudyGit
-Saya belajar menggunakan Git for Windows melalui repo ini.
+Repository Tugas API Muhammad Daffa Alfaridzi - 18217013
