@@ -1,6 +1,13 @@
 from flask import Flask
 import feedparser
 
+@app.route('/')
+def index():
+    try:
+        return 'hello'
+    except Exception as e:
+        raise e
+
 # Function grabs the rss feed headlines (titles) and returns them as a list
 @app.route('/getHeadlines/<rss_url>')
 def getHeadlines(rss_url):
