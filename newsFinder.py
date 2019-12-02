@@ -7,7 +7,13 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     try:
-        return 'this is newsfinder api by daffa alfaridzi'
+        return '''<h1>Selamat Datang ke News Feeder API!</h1>
+        <h2>A prototype API for national news feed getter.</h2>
+        <p> Untuk menggunakan API ini, terdapat 1 endpoint saja, yaitu /dalamnegeri/keyword</p> 
+        <p> Cara menggunakan API ini cukup simple : Ganti keyword dengan kata yang Anda ingin cari </p>
+        <h3> Terima Kasih! </h3>
+        <p><strong> Created by Muhammad Daffa Alfaridzi - 18217013</strong></p>
+        '''
     except Exception as e:
         raise e
 
