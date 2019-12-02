@@ -1,20 +1,22 @@
 from flask import Flask
 import feedparser
 
+app = Flask(__name__)
+
+
 @app.route('/')
 def index():
     try:
-        return 'hello'
+        return 'this is newsfinder api by daffa alfaridzi'
     except Exception as e:
         raise e
 
 # Function grabs the rss feed headlines (titles) and returns them as a list
-@app.route('/getHeadlines/<rss_url>')
 def getHeadlines(rss_url):
     try:
         listLink = []
         
-        feed = feedparser.parse(rss_url) 
+        feed = feedparser.parse(rss_url)
         for newsitem in feed['items']:
             listLink.append(newsitem['link'])
 
