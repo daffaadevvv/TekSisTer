@@ -30,7 +30,7 @@ def getHeadlines(rss_url):
     except Exception as e:
         raise e
 
-@app.route('/dalamNegeri/<keyword>')
+@app.route('/dalamnegeri/<keyword>')
 def dalamNegeri(keyword):
     try:
         listLink = getHeadlines('https://www.republika.co.id/rss')
