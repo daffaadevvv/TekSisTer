@@ -1,15 +1,18 @@
+from flask import Flask
 import feedparser
 
 # Function grabs the rss feed headlines (titles) and returns them as a list
-def getHeadlines( rss_url ):
+@app.route('/getHeadlines/<rss_url>')
+def getHeadlines(rss_url):
     listLink = []
     
-    feed = feedparser.parse( rss_url ) 
+    feed = feedparser.parse(rss_url) 
     for newsitem in feed['items']:
         listLink.append(newsitem['link'])
 
     return listLink
 
+@app.route('/dalamNegeri/<keyword>')
 def dalamNegeri(keyword):
     listLink = getHeadlines('https://www.republika.co.id/rss')
     
@@ -27,3 +30,5 @@ def dalamNegeri(keyword):
 
     return result
 
+if __name__ == '__main__':
+    app.run(threaded = True)
